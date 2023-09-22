@@ -2,7 +2,7 @@
 
 .PHONY: build
 build: ## Builds the docker container
-	docker build -t mllrsohn/docker-git-crypt-unlock .
+	docker buildx build --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag mllrsohn/docker-git-crypt-unlock:latest .
 
 .PHONY: run
 run: ## Runs the container
